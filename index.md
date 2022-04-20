@@ -1,5 +1,4 @@
-Here you can say lots of fun things about your site.
+I am a Cloud Computing enthusiast with my expert badge in Azure Solution Archtiect and Microsoft 365 Enterprise Administration
 
-Maybe say a some things about yourself.
 
-Or maybe what you plan to blog about.
+
