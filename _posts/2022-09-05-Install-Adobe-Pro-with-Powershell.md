@@ -4,7 +4,7 @@
 
 Moving on from the hurdles we had to leap to install Adobe Acrobat Reader through Intune the Pro suite has it's own challenges.
 
-Of course you can try the "official method" as per  [Deploy Adobe packages using Microsoft Intune "Adobe documentation"). 
+Of course you can try the "official method" as per  [Adobe Documentation](https://helpx.adobe.com/au/enterprise/kb/deploy-packages-using-ms-intune.html). 
 
 It may be the Australian internet or that I haven't sacrificed the goat the right way but I've never had any success with deploying via that method. I suspect the Intune CDN struggles on any larger application files.
 
@@ -15,7 +15,7 @@ To combat this I've written up some Powershell code using one of my favourite co
 This will download the installer, extract the files and run the installer.
 
 You can find the code on my GitHub repo:
-https://github.com/GKastner87/PowershellScripts/blob/41bbf02b6648ec2965285167762951caa9de5118/InstallAdobePro.ps1
+[InstallAdobePro.ps1](https://github.com/GKastner87/PowershellScripts/blob/main/InstallAdobePro.ps1)
 
 The workstations in my current environment receive a prompt about Internet Explorer updates on launch, written in that script is also the registry fix to attend to that. Comment it out if not relevant to you.
 
@@ -39,4 +39,4 @@ Associated with a 32-bit app on 64-bit clients: Yes
 
 I also wrote a sister script that will check if the downloaded Adobe files are older than 24 hours and if so to purge them to not leave any old data behind.
 
-https://github.com/GKastner87/PowershellScripts/blob/41bbf02b6648ec2965285167762951caa9de5118/CleanUp-OldAdobeFiles.ps1![image](https://user-images.githubusercontent.com/74800477/188368583-0ff8ae02-01b3-4895-bc0d-d799511aebe1.png)
+[CleanUp-OldAdobeFiles.ps1](https://github.com/GKastner87/PowershellScripts/blob/main/CleanUp-OldAdobeFiles.ps1)
