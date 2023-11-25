@@ -8,6 +8,87 @@ But worry not! In this blog post, I'll show you how you can use the power of som
 
 We'll explore a powerful script that not only helps you fix the immediate crisis but also equips you to handle any future morning outages, allowing you to relax and enjoy a well-deserved cup of coffee. 
 
+```
+<#
+.SYNOPSIS
+This script checks for software updates and installs them using different methods based on the software type.
+
+.DESCRIPTION
+The script retrieves an RSS feed containing software update information from the Zero Day Initiative website. It then filters the updates based on specific software titles such as Adobe Reader DC, Microsoft Office, Google Chrome, Firefox, Microsoft Edge, and Microsoft Windows. For the selected software updates, it uses different methods to perform the update. For Adobe Reader DC, Microsoft Office, Google Chrome, Firefox, and Microsoft Edge, it uses the 'winget' command-line tool to update the software. For Microsoft Windows updates, it uses the 'PSWindowsUpdate' module to install the updates and perform an automatic reboot if necessary. The script also logs the updates performed and writes the log messages to a text file.
+
+.PARAMETER None
+
+.INPUTS
+None
+
+.OUTPUTS
+None
+
+.EXAMPLE
+.\Untitled-1.ps1
+Runs the script to check for software updates and install them.
+
+.NOTES
+Author: Guy Kastner
+Date: 21/11/2023
+Version: 1.0
+#>
+# Create a variable to hold the log messages
+$log = ""
+
+# Add the current date and time to the log messages
+$log += "Script run at: $(Get-Date)`n"
+
+# Check if the PSWindowsUpdate module is installed
+if (-not(Get-Module -ListAvailable -Name PSWindowsUpdate)) {
+    # Install the PSWindowsUpdate module for all users and allow clobbering
+    Install-Module -Name PSWindowsUpdate -Scope AllUsers -AllowClobber -Force
+}
+
+# URL of the RSS feed
+$url = "https://www.zerodayinitiative.com/rss/published/"
+
+# Use Invoke-RestMethod cmdlet to get the RSS feed
+$response = Invoke-RestMethod -Uri $url
+
+# Parse the response to get the updates list
+$updates = $response.Channel.Item | Where-Object {
+    $_.Title -match "Adobe Reader DC" -or
+    $_.Title -match "Microsoft Office" -or
+    $_.Title -match "Google Chrome" -or
+    $_.Title -match "Firefox" -or
+    $_.Title -match "Microsoft Edge" -or
+    $_.Title -match "Microsoft Windows"
+}
+
+# Check the updates list
+foreach ($update in $updates) {
+    # If the update is for Adobe Reader DC, Microsoft Office, Google Chrome, Firefox, or Microsoft Edge
+    if ($update.Title -match "Adobe Reader DC" -or
+        $update.Title -match "Microsoft Office" -or
+        $update.Title -match "Google Chrome" -or
+        $update.Title -match "Firefox" -or
+        $update.Title -match "Microsoft Edge") {
+        # Use winget to update the software
+        winget upgrade --id=$update.Title
+        # Add a log message
+        $log += "Updated: $($update.Title)`n"
+    }
+    # If the update is for Microsoft Windows
+    elseif ($update.Title -match "Microsoft Windows") {
+        # Use PSWindowsUpdate to update Windows
+        Get-WindowsUpdate -MicrosoftUpdate | Install-WindowsUpdate -AcceptAll -AutoReboot
+        # Add a log message
+        $log += "Updated: $($update.Title)`n"
+    }
+}
+
+# If there are log messages, write them to a text file
+if ($log -ne "") {
+    $log | Out-File -FilePath "updates_log.txt" -Append
+}
+
+```
 
 ### Let's Dive into the Script:
 
