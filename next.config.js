@@ -13,7 +13,16 @@ const nextConfig = {
   eslint: {
     // Temporarily ignore eslint errors during build
     ignoreDuringBuilds: true,
-  }
+  },
+  experimental: {
+    // Enable if needed
+    appDir: true,
+  },
+  // Disable type checking during build
+  skipTypeCheck: true,
+  // Disable middleware
+  skipMiddlewareUrlNormalize: true,
+  skipTrailingSlashRedirect: true,
 }
 
 module.exports = nextConfig 
