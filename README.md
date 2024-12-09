@@ -1,15 +1,28 @@
 # Guy Kastner's Blog
 
-My personal blog built with Next.js 14, TypeScript, and Tailwind CSS.
+My personal blog focused on Microsoft technologies, PowerShell automation, and IT security. Built with Next.js 14, TypeScript, and Tailwind CSS.
 
-## Features
+## Topics Covered
 
-- Modern, responsive design
-- Dark mode support
-- Blog posts written in Markdown
-- Fast page loads with Next.js
-- Tailwind CSS for styling
-- TypeScript for type safety
+- **Azure**: Cloud infrastructure, services, and Azure DevOps
+- **Intune**: Device management, app deployment, and endpoint security
+- **PowerShell**: Scripting, automation, and tooling
+- **Security**: Cybersecurity and IT security
+
+## Recent Posts
+
+- Converting PowerShell Scripts to EXE with PS2EXE
+- Automating Software Updates with RSS Feeds
+- Deploy Adobe Acrobat Reader DC via Intune
+- Patch Zero-Day Vulnerabilities for Free
+
+## Tech Stack
+
+- **Framework**: Next.js 14
+- **Language**: TypeScript
+- **Styling**: Tailwind CSS
+- **Content**: Markdown
+- **Deployment**: GitHub Pages
 
 ## Running Locally
 
@@ -31,15 +44,24 @@ Blog posts are stored in `content/posts` as Markdown files. Each post should inc
 
 ```markdown
 ---
-title: Your Post Title
-description: A brief description of your post
-date: YYYY-MM-DD
-category: Technology
+title: "Your Post Title"
+description: "A brief description of your post"
+date: "YYYY-MM-DD"
+category: "Azure|Intune|PowerShell|Security"
 ---
 
 Your post content here...
 ```
 
+## Features
+
+- 🌓 Dark mode support
+- 🔍 Fast search functionality
+- 📱 Fully responsive design
+- 🚀 Optimized for performance
+- 📝 Easy content management with Markdown
+- 🔖 Category-based organization
+
 ## License
 
-MIT License 
+MIT License - Feel free to use this code for your own blog! 
