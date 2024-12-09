@@ -25,45 +25,31 @@ jobs:
         uses: actions/setup-node@v4
         with:
           node-version: "18"
-          cache: 'npm'
       
       - name: Setup Pages
         uses: actions/configure-pages@v4
         
-      - name: Install dependencies
+      - name: Clean install
         run: |
+          echo "Cleaning previous installations..."
           rm -rf node_modules package-lock.json
+          echo "Installing dependencies..."
           npm install
+          echo "Installing Tailwind Typography..."
           npm install @tailwindcss/typography
+          echo "Listing installed packages..."
+          npm list --depth=0
         
-      - name: Show environment
-        run: |
-          npm --version
-          node --version
-          ls -la
-          
       - name: Build with Next.js
         run: |
           echo "Starting Next.js build..."
-          npm run build --verbose
+          npm run build
         env:
           CI: false
           NEXT_PUBLIC_BASE_PATH: ''
           NODE_OPTIONS: '--max_old_space_size=4096'
-          DEBUG: '*'
-        
-      - name: List output directory
-        if: always()
-        run: |
-          echo "Current directory:"
-          pwd
-          echo "Directory contents:"
-          ls -la
-          echo "Out directory contents (if exists):"
-          ls -la out || echo "out directory not found"
         
       - name: Upload artifact
-        if: success()
         uses: actions/upload-pages-artifact@v2
         with:
           path: ./out
