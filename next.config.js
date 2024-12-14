@@ -18,11 +18,12 @@ const nextConfig = {
     // Enable if needed
     appDir: true,
   },
-  // Disable type checking during build
-  skipTypeCheck: true,
-  // Disable middleware
-  skipMiddlewareUrlNormalize: true,
-  skipTrailingSlashRedirect: true,
+  // Ensure all pages are generated at build time
+  generateStaticParams: true,
+  // Generate 404 page
+  generateBuildId: async () => 'build',
+  // Add assetPrefix for production
+  assetPrefix: process.env.NODE_ENV === 'production' ? 'https://guykastner.com' : ''
 }
 
 module.exports = nextConfig 

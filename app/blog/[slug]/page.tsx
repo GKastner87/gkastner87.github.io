@@ -45,6 +45,9 @@ export default async function BlogPost({ params }: Props) {
 
 export async function generateStaticParams() {
   const posts = await getAllPosts()
+  
+  console.log('Generating static paths for posts:', posts.map(post => post.slug))
+  
   return posts.map((post) => ({
     slug: post.slug,
   }))
