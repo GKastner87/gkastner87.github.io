@@ -4,6 +4,8 @@ date: 2024-12-14
 draft: false
 tags: ["Windows 11", "Intune", "SCCM", "AutoPatch", "Azure", "Migration", "Digital Transformation"]
 summary: "Rolling out Windows 11 at enterprise scale isn’t just about pushing an upgrade. It’s about flattening complexity, scrutinising policies, and setting clear milestones. Here are 10 lessons I learned along the way."
+description: "Short teaser for the Windows 11 rollout article"
+category: "Intune"
 ---
 
 With Windows 10 end-of-life approaching, enterprises everywhere are racing to get onto Windows 11. What I walked into was an environment weighed down by half-finished initiatives, legacy overlap, and technical debt. AutoPatch had been started but not finished, SCCM and Intune were both trying to steer updates, and reporting had drifted into irrelevance.  
