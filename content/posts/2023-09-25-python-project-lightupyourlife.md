@@ -1,3 +1,11 @@
+---
+title: "Practice Exam AWS Certified Solutions Architect Professional"
+date: "2023-09-25"
+draft: false
+tags: ["AWS", "Practice Exam"]
+summary: "Practice questions and explanations for the AWS Certified Solutions Architect Professional exam."
+category: "AWS"
+---
 
 Practice Exam AWS Certified Solutions Architect Professional
 326–414 minutes
