@@ -3,6 +3,7 @@ title: "Converting PowerShell Scripts to EXE with PS2EXE: A Real-World Example"
 description: "Learn how to convert PowerShell scripts into standalone executables using PS2EXE, with a practical example of automating Excel file backups to OneDrive."
 date: "2024-01-09"
 category: "PowerShell"
+categories: ["PowerShell"]
 ---
 
 # Converting PowerShell Scripts to EXE with PS2EXE: A Real-World Example
