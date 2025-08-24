@@ -1,6 +1,6 @@
 ---
 title: "10 Things I Learned About Planning a Windows 11 Rollout"
-date: 2025-03-28
+date: "2025-03-28"
 draft: false
 tags: ["Windows 11", "Intune", "SCCM", "AutoPatch", "Azure", "Migration", "Digital Transformation"]
 summary: "Rolling out Windows 11 at enterprise scale isn’t just about pushing an upgrade. It’s about flattening complexity, scrutinising policies, and setting clear milestones. Here are 10 lessons I learned along the way."
