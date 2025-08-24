@@ -1,0 +1,23 @@
+name: PR build check (Next.js export)
+on:
+  pull_request:
+    branches: [ main ]
+permissions:
+  contents: read
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with: { node-version: '20' }
+      - run: npm ci || npm install
+      - run: NEXT_DISABLE_LOCKFILE_PATCH=1 NEXT_TELEMETRY_DISABLED=1 npm run build
+      - name: Verify exported category pages
+        run: |
+          test -f out/blog/category/powershell/index.html || (echo "Missing powershell page" && exit 1)
+      - name: Upload out/ as artifact
+        uses: actions/upload-artifact@v4
+        with:
+          name: static-export
+          path: out

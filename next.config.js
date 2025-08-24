@@ -6,6 +6,11 @@ const nextConfig = {
   },
   basePath: '',
   trailingSlash: true,
+  async redirects() {
+    return [
+      { source: '/category/:slug', destination: '/blog/category/:slug', permanent: true },
+    ]
+  },
   typescript: {
     // Temporarily ignore type errors during build
     ignoreBuildErrors: true,
