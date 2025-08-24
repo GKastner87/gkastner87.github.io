@@ -2,6 +2,7 @@ import { getPostBySlug, getAllPosts } from '@/lib/posts.server'
 import { notFound } from 'next/navigation'
 import { Metadata } from 'next'
 import Markdown from 'markdown-to-jsx'
+import SafeDate from '@/components/SafeDate'
 
 interface Props {
   params: {
@@ -28,12 +29,23 @@ export default async function BlogPost({ params }: Props) {
       <div className="max-w-3xl mx-auto">
         <header className="mb-8">
           <div className="flex items-center gap-2 text-sm text-muted-foreground mb-4">
-            <time>{post.date}</time>
-            <span>•</span>
-            <span className="text-primary">{post.category}</span>
+            <SafeDate iso={post.date} />
+            {post.category && (
+              <>
+                <span>•</span>
+                <span className="text-primary">{post.category}</span>
+              </>
+            )}
           </div>
           <h1 className="text-3xl sm:text-4xl font-bold mb-4">{post.title}</h1>
           <p className="text-xl text-muted-foreground">{post.description}</p>
+          {Array.isArray(post.tags) && post.tags.length > 0 && (
+            <ul className="mt-4 flex flex-wrap gap-2 text-sm text-muted-foreground">
+              {post.tags.map(t => (
+                <li key={t}>{t}</li>
+              ))}
+            </ul>
+          )}
         </header>
         <div className="prose prose-lg dark:prose-invert max-w-none prose-pre:bg-muted prose-pre:text-muted-foreground prose-a:text-primary">
           <Markdown>{post.content}</Markdown>
@@ -46,9 +58,7 @@ export default async function BlogPost({ params }: Props) {
 export async function generateStaticParams() {
   const posts = await getAllPosts()
   
-  console.log('Generating static paths for posts:', posts.map(post => post.slug))
-  
   return posts.map((post) => ({
     slug: post.slug,
   }))
-} 
+}

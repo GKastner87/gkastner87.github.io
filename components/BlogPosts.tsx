@@ -3,6 +3,7 @@
 import { useState } from 'react'
 import Link from 'next/link'
 import { Post } from '@/lib/blog'
+import SafeDate from './SafeDate'
 
 interface BlogPostsProps {
   initialPosts: Post[]
@@ -17,9 +18,13 @@ export default function BlogPosts({ initialPosts }: BlogPostsProps) {
         <article key={post.slug} className="group relative bg-muted rounded-lg overflow-hidden hover:shadow-lg transition-shadow">
           <Link href={`/blog/${post.slug}`} className="block p-6">
             <div className="flex items-center gap-2 text-sm text-muted-foreground mb-4">
-              <time>{post.date}</time>
-              <span>•</span>
-              <span className="text-primary">{post.category}</span>
+              <SafeDate iso={post.date} />
+              {post.category && (
+                <>
+                  <span>•</span>
+                  <span className="text-primary">{post.category}</span>
+                </>
+              )}
             </div>
             <h2 className="text-xl font-bold mb-2 group-hover:text-primary transition-colors">
               {post.title}
@@ -27,9 +32,16 @@ export default function BlogPosts({ initialPosts }: BlogPostsProps) {
             <p className="text-muted-foreground">
               {post.description}
             </p>
+            {Array.isArray(post.tags) && post.tags.length > 0 && (
+              <ul className="mt-4 flex flex-wrap gap-2 text-sm text-muted-foreground">
+                {post.tags.map(t => (
+                  <li key={t}>{t}</li>
+                ))}
+              </ul>
+            )}
           </Link>
         </article>
       ))}
     </div>
   )
-} 
+}

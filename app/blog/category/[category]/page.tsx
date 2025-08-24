@@ -1,5 +1,5 @@
 import { getAllPosts } from '@/lib/posts.server'
-import { CATEGORIES, Category } from '@/lib/blog'
+import { CATEGORIES } from '@/lib/blog'
 import { notFound } from 'next/navigation'
 import { Metadata } from 'next'
 import BlogPosts from '@/components/BlogPosts'
@@ -10,22 +10,38 @@ interface Props {
   }
 }
 
+function isNonEmptyString(x: unknown): x is string {
+  return typeof x === 'string' && x.trim().length > 0
+}
+
+function slugify(s: string) {
+  return s.toLowerCase().replace(/\s+/g, '-')
+}
+
 export async function generateMetadata({ params }: Props): Promise<Metadata> {
-  const category = params.category.charAt(0).toUpperCase() + params.category.slice(1) as Category
-  if (!CATEGORIES[category]) return { title: 'Category Not Found' }
+  const categoryKey = Object.keys(CATEGORIES).find(
+    (key) => slugify(key) === params.category
+  )
+  if (!categoryKey) return { title: 'Category Not Found' }
 
   return {
-    title: `${category} Posts - Guy Kastner`,
-    description: CATEGORIES[category],
+    title: `${categoryKey} Posts - Guy Kastner`,
+    description: CATEGORIES[categoryKey as keyof typeof CATEGORIES],
   }
 }
 
 export default async function CategoryPage({ params }: Props) {
-  const categoryKey = params.category.charAt(0).toUpperCase() + params.category.slice(1) as Category
-  if (!CATEGORIES[categoryKey]) notFound()
+  const categorySlug = params.category
+  const categoryKey = Object.keys(CATEGORIES).find(
+    (key) => slugify(key) === categorySlug
+  )
+  if (!categoryKey) notFound()
 
   const posts = await getAllPosts()
-  const categoryPosts = posts.filter(post => post.category === categoryKey)
+  const categoryPosts = posts.filter(
+    (p) => isNonEmptyString(p.category) && slugify(p.category) === categorySlug
+  )
+  if (categoryPosts.length === 0) notFound()
 
   return (
     <div className="container mx-auto px-4 py-16 mt-16">
@@ -33,7 +49,7 @@ export default async function CategoryPage({ params }: Props) {
         <header className="mb-12">
           <h1 className="text-3xl sm:text-4xl font-bold mb-4">{categoryKey} Posts</h1>
           <p className="text-lg text-muted-foreground">
-            {CATEGORIES[categoryKey]}
+            {CATEGORIES[categoryKey as keyof typeof CATEGORIES]}
           </p>
         </header>
         <BlogPosts initialPosts={categoryPosts} />
@@ -43,7 +59,12 @@ export default async function CategoryPage({ params }: Props) {
 }
 
 export async function generateStaticParams() {
-  return Object.keys(CATEGORIES).map((category) => ({
-    category: category.toLowerCase(),
-  }))
-} 
+  const posts = await getAllPosts()
+  const cats = new Set<string>()
+  for (const p of posts) {
+    if (isNonEmptyString(p.category)) {
+      cats.add(slugify(p.category))
+    }
+  }
+  return Array.from(cats).map((category) => ({ category }))
+}
