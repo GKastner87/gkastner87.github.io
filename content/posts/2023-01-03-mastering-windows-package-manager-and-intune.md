@@ -1,3 +1,12 @@
+---
+title: "Mastering Windows Package Manager (winget) and Intune Like a Pro!"
+date: "2023-01-03"
+draft: false
+tags: ["Intune", "winget", "Windows Package Manager"]
+summary: "A guide to deploying and managing applications with Windows Package Manager and Intune."
+category: "Intune"
+---
+
 # Mastering Windows Package Manager (winget) and Intune Like a Pro! 🚀🔐
 
 Today, we're diving into the realm of Windows Package Manager (winget) and the mighty Intune, the dynamic duo that'll have your Windows applications bowing down in updates! 🌐💻

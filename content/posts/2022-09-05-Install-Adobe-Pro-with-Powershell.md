@@ -1,3 +1,12 @@
+---
+title: "Install Adobe Acrobat Pro via Intune"
+date: "2022-09-05"
+draft: false
+tags: ["Intune", "PowerShell", "Adobe"]
+summary: "Powershell script and Intune packaging approach to deploy Adobe Acrobat Pro."
+category: "PowerShell"
+---
+
 # Install Adobe Acrobat Pro via Intune
 
 <iframe src="https://giphy.com/embed/5xCGnF93P90UE" width="383" height="480" frameBorder="0" class="giphy-embed" allowFullScreen></iframe><p><a href="https://giphy.com/gifs/grandpa-teetertotter-5xCGnF93P90UE">via GIPHY</a></p>

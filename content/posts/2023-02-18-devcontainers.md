@@ -1,3 +1,12 @@
+---
+title: "Dev Containers + VS Code - don't have it work on your machine, have it work on every machine"
+date: "2023-02-18"
+draft: false
+tags: ["Development", "Dev Containers", "VS Code"]
+summary: "Introduction to using VS Code Dev Containers for consistent development environments."
+category: "Development"
+---
+
 # Dev Containers + VS Code - don't have it work on your machine, have it work on every machine
 
 ## Introduction
