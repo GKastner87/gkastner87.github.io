@@ -2,7 +2,7 @@
 title: "Automated User Notifications and Upgrade Orchestration with Azure Logic Apps and Graph API"
 date: 2025-01-15
 draft: false
-tags: ["Windows 11","Azure","Logic Apps","Graph API","Intune","Automation","Storage","Serverless"]
+tags: ["Intune", "Azure", "DevOps"]
 description: "How I used Azure Logic Apps, Microsoft Graph, and Storage to automate Windows 11 user notifications, deliver self-service upgrade guides, and orchestrate the rollout across a global workforce."
 category: "Intune"
 ---

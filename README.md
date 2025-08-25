@@ -1,13 +1,15 @@
 # Guy Kastner's Blog
 
-My personal blog focused on Microsoft technologies, PowerShell automation, and IT security. Built with Next.js 14, TypeScript, and Tailwind CSS.
+My personal blog focused on Microsoft technologies, scripting and automation, DevOps, and IT security. Built with Next.js 14, TypeScript, and Tailwind CSS.
 
 ## Topics Covered
 
 - **Azure**: Cloud infrastructure, services, and Azure DevOps
 - **Intune**: Device management, app deployment, and endpoint security
-- **PowerShell**: Scripting, automation, and tooling
+- **Scripting**: PowerShell, Python, and automation tooling
 - **Security**: Cybersecurity and IT security
+- **DevOps**: Software engineering, DevOps practices, and developer tools
+- **AWS**: Amazon Web Services architecture and solutions
 
 ## Recent Posts
 
@@ -47,7 +49,7 @@ Blog posts are stored in `content/posts` as Markdown files. Each post should inc
 title: "Your Post Title"
 description: "A brief description of your post"
 date: "YYYY-MM-DD"
-category: "Azure|Intune|PowerShell|Security"
+category: "Azure|Intune|Scripting|Security|DevOps|AWS"
 ---
 
 Your post content here...

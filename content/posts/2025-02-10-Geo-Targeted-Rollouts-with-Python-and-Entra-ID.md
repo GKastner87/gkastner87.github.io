@@ -2,7 +2,7 @@
 title: "Geo-Targeted Rollouts with Python and Entra ID"
 date: 2025-02-10
 draft: false
-tags: ["Windows 11","Azure","Intune","Python","Entra ID","KQL","Rollout Planning"]
+tags: ["Intune", "Azure", "Scripting"]
 description: "How I used Entra ID metadata, Python geospatial logic, and Azure Monitor data to design location-aware rollout waves that respected networks and support capacity."
 category: "Intune"
 ---

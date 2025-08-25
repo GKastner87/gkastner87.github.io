@@ -4,7 +4,7 @@ import BlogPosts from '@/components/BlogPosts'
 
 export const metadata: Metadata = {
   title: 'Blog - Guy Kastner',
-  description: 'Articles about Microsoft technologies, PowerShell, development, and security.',
+  description: 'Articles about Microsoft technologies, scripting, DevOps, and security.',
 }
 
 export default async function BlogPage() {

@@ -2,7 +2,7 @@
 title: "Automating Software Updates with RSS Feeds and PowerShell"
 description: "Learn how to automate software updates using PowerShell and RSS feeds to stay ahead of zero-day vulnerabilities"
 date: "2023-11-21"
-tags: ["PowerShell", "Automation", "RSS"]
+tags: ["Security", "Scripting"]
 category: "Security"
 ---
 
