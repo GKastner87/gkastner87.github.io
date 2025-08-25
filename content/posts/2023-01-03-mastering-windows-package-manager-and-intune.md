@@ -3,7 +3,7 @@ title: "Mastering Windows Package Manager (winget) and Intune Like a Pro!"
 date: "2023-01-03"
 draft: false
 tags: ["Intune", "winget", "Windows Package Manager"]
-summary: "A guide to deploying and managing applications with Windows Package Manager and Intune."
+description: "A guide to deploying and managing applications with Windows Package Manager and Intune."
 category: "Intune"
 ---
 

@@ -2,7 +2,8 @@
 title: "PowerShell Automation: 5 Scripts That Will Change Your Life (And Save You Hours)"
 description: "Ready to level up your automation game? These advanced PowerShell scripts will transform your Intune management from chaos to ORGANIZED PERFECTION! 🚀"
 date: "2023-12-09"
-category: "Development"
+category: "PowerShell"
+tags: ["PowerShell", "Intune", "Automation"]
 ---
 
 # PowerShell Automation: 5 Advanced Scripts That Will Change Your Life! 🚀

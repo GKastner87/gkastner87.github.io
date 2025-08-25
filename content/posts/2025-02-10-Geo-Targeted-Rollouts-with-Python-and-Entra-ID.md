@@ -3,7 +3,8 @@ title: "Geo-Targeted Rollouts with Python and Entra ID"
 date: 2025-02-10
 draft: false
 tags: ["Windows 11","Azure","Intune","Python","Entra ID","KQL","Rollout Planning"]
-summary: "How I used Entra ID metadata, Python geospatial logic, and Azure Monitor data to design location-aware rollout waves that respected networks and support capacity."
+description: "How I used Entra ID metadata, Python geospatial logic, and Azure Monitor data to design location-aware rollout waves that respected networks and support capacity."
+category: "Intune"
 ---
 
 A global Windows 11 rollout isn’t just about technical readiness. It’s also about **when and where** devices upgrade. Push too many machines at once in the wrong place and you swamp fragile WAN links. Move too fast in regions without support staff and you risk a flood of tickets that no one can respond to.

@@ -3,7 +3,8 @@ title: "Automated User Notifications and Upgrade Orchestration with Azure Logic 
 date: 2025-01-15
 draft: false
 tags: ["Windows 11","Azure","Logic Apps","Graph API","Intune","Automation","Storage","Serverless"]
-summary: "How I used Azure Logic Apps, Microsoft Graph, and Storage to automate Windows 11 user notifications, deliver self-service upgrade guides, and orchestrate the rollout across a global workforce."
+description: "How I used Azure Logic Apps, Microsoft Graph, and Storage to automate Windows 11 user notifications, deliver self-service upgrade guides, and orchestrate the rollout across a global workforce."
+category: "Intune"
 ---
 
 Upgrading at scale is half technology, half communication. I needed a way to target the right user, act on the right device, and send a clear message with a real deadline. Azure gave me the building blocks: Logic Apps as the orchestrator, Microsoft Graph for identity and device truth, and Azure Storage to host lightweight help pages and QR codes. It was fast to build, cheap to run, and simple for support to trigger.
