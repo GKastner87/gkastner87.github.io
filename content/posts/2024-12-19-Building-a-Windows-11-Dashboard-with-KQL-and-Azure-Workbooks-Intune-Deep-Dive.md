@@ -2,7 +2,7 @@
 title: "Building a Windows 11 Dashboard with KQL and Azure Workbooks"
 date: 2024-12-19
 draft: false
-tags: ["Windows 11","KQL","Azure","Workbooks","Intune","Dashboard","Upgrade"]
+tags: ["Intune", "Azure"]
 description: "How I built a Windows 11 vs Windows 10 tracking dashboard using KQL queries and Azure Workbooks, turning raw telemetry into a single source of truth."
 category: "Intune"
 ---

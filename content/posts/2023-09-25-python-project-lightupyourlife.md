@@ -2,7 +2,7 @@
 title: "Practice Exam AWS Certified Solutions Architect Professional"
 date: "2023-09-25"
 draft: false
-tags: ["AWS", "Practice Exam"]
+tags: ["AWS"]
 description: "Practice questions and explanations for the AWS Certified Solutions Architect Professional exam."
 category: "AWS"
 ---

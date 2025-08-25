@@ -42,9 +42,9 @@ export default function AboutPage() {
                 </ul>
               </div>
               <div className="bg-muted rounded-xl p-6">
-                <h3 className="text-xl font-semibold mb-3">Automation & Development</h3>
+                <h3 className="text-xl font-semibold mb-3">Automation & DevOps</h3>
                 <ul className="space-y-2">
-                  <li>PowerShell Scripting</li>
+                  <li>Scripting (PowerShell, Python)</li>
                   <li>Process Automation</li>
                   <li>DevOps Practices</li>
                   <li>Modern IT Solutions</li>
@@ -70,7 +70,7 @@ export default function AboutPage() {
             <h2 className="text-2xl font-bold mb-4 !mt-0">What You'll Find Here 📚</h2>
             <ul className="space-y-3">
               <li>Clear, beginner-friendly tutorials</li>
-              <li>Practical PowerShell scripts for automation</li>
+              <li>Practical scripting examples for automation</li>
               <li>Real-world projects and Azure how-tos</li>
               <li>No fluff, no nonsense—just actionable tech solutions</li>
             </ul>
