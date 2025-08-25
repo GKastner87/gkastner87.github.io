@@ -14,12 +14,6 @@ const nextConfig = {
     // Temporarily ignore eslint errors during build
     ignoreDuringBuilds: true,
   },
-  experimental: {
-    // Enable if needed
-    appDir: true,
-  },
-  // Ensure all pages are generated at build time
-  generateStaticParams: true,
   // Generate 404 page
   generateBuildId: async () => 'build',
   // Add assetPrefix for production
