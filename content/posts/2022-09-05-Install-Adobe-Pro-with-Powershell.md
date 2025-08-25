@@ -3,7 +3,7 @@ title: "Install Adobe Acrobat Pro via Intune"
 date: "2022-09-05"
 draft: false
 tags: ["Intune", "PowerShell", "Adobe"]
-summary: "Powershell script and Intune packaging approach to deploy Adobe Acrobat Pro."
+description: "Powershell script and Intune packaging approach to deploy Adobe Acrobat Pro."
 category: "PowerShell"
 ---
 

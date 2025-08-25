@@ -2,7 +2,8 @@
 title: "Deploy Adobe Acrobat Reader DC via Intune"
 description: "A step-by-step guide to deploying Adobe Acrobat Reader DC to your endpoints using Microsoft Intune."
 date: "2021-03-08"
-category: "Microsoft"
+category: "Intune"
+tags: ["Intune", "Adobe Reader", "Deployment"]
 ---
 
 # Deploy Adobe Acrobat Reader DC via Intune

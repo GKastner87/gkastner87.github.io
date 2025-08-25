@@ -3,8 +3,8 @@ title: "Automating Litigation Hold with Managed Identity: A Step-by-Step Guide"
 date: "2022-11-14"
 draft: false
 tags: ["Azure", "Automation", "Exchange Online"]
-summary: "How to use Azure Automation and managed identity to manage litigation holds in Exchange Online."
-category: "Automation"
+description: "How to use Azure Automation and managed identity to manage litigation holds in Exchange Online."
+category: "Azure"
 ---
 
 ## Automating Litigation Hold with Managed Identity: A Step-by-Step Guide
