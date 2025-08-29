@@ -1,9 +1,10 @@
 ---
 title: "Serverless Event Processing Pipeline on AWS: Deep Dive"
-date: 2025-01-15
+date: 2025-02-15
 draft: false
-tags: ["AWS","Lambda","S3","DynamoDB","SNS","Serverless","Python","Architecture"]
+tags: ["AWS", "Lambda", "S3", "DynamoDB", "SNS", "Serverless", "Python", "Architecture"]
 summary: "A full breakdown of a real-world AWS serverless architecture — from the big picture to the step-by-step build. Ideal for SAP-C02 exam prep and real-world portfolios."
+category: "AWS"
 ---
 
 ## Why Serverless Pipelines Matter
