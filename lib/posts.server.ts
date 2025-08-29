@@ -32,7 +32,10 @@ export async function getAllPosts() {
     const title = isNonEmptyString(data.title) ? data.title : file.replace(/\.(md|mdx)$/, '')
     const slug = isNonEmptyString(data.slug)
       ? data.slug
-      : title.toLowerCase().replace(/\s+/g, '-')
+      : title
+          .toLowerCase()
+          .replace(/[^a-z0-9]+/g, '-')
+          .replace(/^-+|-+$/g, '')
 
     const date = toISODate(data.date) || ''
     const category = isNonEmptyString(data.category) ? data.category : 'Uncategorized'
